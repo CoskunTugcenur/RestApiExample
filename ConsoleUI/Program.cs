@@ -12,15 +12,15 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
            
-            CarManager carManager = new CarManager(new EntityRepository<Car>());
+            CarManager carManager = new CarManager(new EfCarDal());
 
-            carManager.Add(new Car { BrandId = 5, ColorId = 3, Name = "MERCEDES", DailyPrice = 1500, Description = "1000km", ModelYear = "2010" });
+            carManager.Add(new Car { BrandId = 7, ColorId = 6, Name = "BMW", DailyPrice = 2500, Description = "1000km", ModelYear = "2010" });
 
 
 
             foreach (var item in carManager.GetAll())
             {
-                Console.WriteLine(item.Description + "\t Year : " + item.DailyPrice);
+                Console.WriteLine(item.Name + "\t Year : " + item.DailyPrice);
             }
 
 
