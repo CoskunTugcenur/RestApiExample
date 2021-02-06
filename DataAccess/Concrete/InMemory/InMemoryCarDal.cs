@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DataAccess.Abstract;
+using System.Linq.Expressions;
 
 namespace DataAccess.Concrete
 {
@@ -35,7 +36,13 @@ namespace DataAccess.Concrete
             _cars.Remove(carToDelete);
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            return null;
+        }
+
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter)
         {
             return _cars;
         }

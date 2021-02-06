@@ -1,39 +1,72 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfBrandDal : IBrandDal
+    public class EfBrandDal : EntityRepository<Brand>//IBrandDal
     {
-        public void Add(Brand entity)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Delete(Brand entity)
-        {
-            throw new NotImplementedException();
-        }
+        //    DbContext context;
+        //    public EfBrandDal(DbContext dbContext)
+        //    {
+        //        context = dbContext;
+        //    }
+        //    public void Add(Brand entity)
+        //    {
+        //        using (context)
+        //        {
+        //            var addedEntity = context.Entry(entity);
+        //            addedEntity.State = EntityState.Added;
+        //            context.SaveChanges();
+        //        }
+        //    }
+
+        //    public void Delete(Brand entity)
+        //    {
+        //        using (context)
+        //        {
+        //            var deletedEntity = context.Entry(entity);
+        //            deletedEntity.State = EntityState.Deleted;
+        //            context.SaveChanges();
+        //        }
+        //    }
 
 
-        public Brand Get(Expression<Func<Brand, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
+        //    public Brand Get(Expression<Func<Brand, bool>> filter)
+        //    {
+        //        using (context)
+        //        {
+        //            return context.Set<Brand>().SingleOrDefault(filter);
+        //        }
+        //    }
 
-       
-        public List<Brand> GetAll(Expression<Func<Brand, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Update(Brand entity)
-        {
-            throw new NotImplementedException();
-        }
+        //    public List<Brand> GetAll(Expression<Func<Brand, bool>> filter)
+        //    {
+        //        using (context)
+        //        {
+        //            return filter == null
+        //                ? context.Set<Brand>().ToList()
+        //                : context.Set<Brand>().Where(filter).ToList();
+        //        }
+        //    }
+
+        //    public void Update(Brand entity)
+        //    {
+        //        using (context)
+        //        {
+        //            var updatedEntity = context.Entry(entity);
+        //            updatedEntity.State = EntityState.Modified;
+        //            context.SaveChanges();
+        //        }
+        //    }
+        //}
+
     }
 }
