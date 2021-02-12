@@ -29,7 +29,7 @@ namespace ConsoleUI
             /*
              * Read
              */
-            Color color = colorManager.GetById(5);
+            Color color = colorManager.GetById(5).Data;
 
             Console.WriteLine(color.Id + color.Name);
 
@@ -39,7 +39,7 @@ namespace ConsoleUI
             color.Name = "Blue";
             colorManager.Update(color);
 
-            color = colorManager.GetById(5);
+            color = colorManager.GetById(5).Data;
             Console.WriteLine(color.Id + color.Name);
             /*
              * Delete
@@ -59,7 +59,7 @@ namespace ConsoleUI
             /*
              * Read
              */
-            Brand brand = brandManager.GetById(10);
+            Brand brand = brandManager.GetById(10).Data;
 
             Console.WriteLine(brand.Id + brand.Name);
 
@@ -69,7 +69,7 @@ namespace ConsoleUI
             brand.Name = "renault";
             brandManager.Update(brand);
 
-            brand = brandManager.GetById(10);
+            brand = brandManager.GetById(10).Data;
             Console.WriteLine(brand.Id + brand.Name);
             /*
              * Delete
@@ -100,13 +100,13 @@ namespace ConsoleUI
             /*
              * Read
              */
-            foreach (var item in carManager.GetAll())
+            foreach (var item in carManager.GetAll().Data)
             {
                 Console.WriteLine(item.Name + "\t Year : " + item.DailyPrice);
                 car1 = item; //son elemanı car1'e atadık
             }
 
-            foreach (var item in carManager.GetCarDetails())
+            foreach (var item in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine(item.CarName + "\t " + item.BrandName + "\t" + item.ColorName + "\t" + item.DailyPrice);
                 
