@@ -11,11 +11,25 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarTest();
+            //CarTest();
 
             //BrandTest();
 
             //ColorTest();
+
+            //Test();
+        }
+
+        private static void Test()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            userManager.Add(new User { FirstName = "Tu", LastName = "Co", Email = "aaa@g.com", Password = "aaaaa" });
+
+            CompanyManager companyManager = new CompanyManager(new EfCompanyDal());
+            companyManager.Add(new Company { Name = "TGC LTD." });
+
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(new Customer { CompanyId = 1, UserId = 1 });
         }
 
         private static void ColorTest()
@@ -127,9 +141,5 @@ namespace ConsoleUI
             Console.WriteLine(car1.Name + "silindi ");
 
         }
-
-        
-
-        
     }
 }
