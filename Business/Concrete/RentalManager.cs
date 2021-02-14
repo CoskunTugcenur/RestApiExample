@@ -3,6 +3,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Add(Rental entity)
         {
-            bool result =GetRentByCarId(entity.CardId).Success;
+            bool result =GetRentByCarId(entity.CarId).Success;
             if (result)
             {
                 _rentalDal.Add(entity);
@@ -60,7 +61,7 @@ namespace Business.Concrete
 
         public IDataResult<Rental> GetRentByCarId(int carId)
         {
-            Rental rental=_rentalDal.Get(c => c.CardId == carId ) ;
+            Rental rental=_rentalDal.Get(c => c.CarId == carId ) ;
 
             if (rental==null || rental.ReturnDate==null)
             {
@@ -71,6 +72,11 @@ namespace Business.Concrete
                 return new ErrorDataResult<Rental>(rental);
             }
 
+        }
+
+        public IDataResult<List<RentalDetailDto>> GetRentalDetails()
+        {
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
         }
     }
 }
