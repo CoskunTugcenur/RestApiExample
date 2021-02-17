@@ -12,7 +12,7 @@ namespace Entities.DTOs
         public string UserName { get; set; }
         public string UserSurname { get; set; }
         public DateTime  RentDate { get; set; }
-        public DateTime ReturnDate { get; set; }
+        public DateTime ? ReturnDate { get; set; }
 
     }
 }

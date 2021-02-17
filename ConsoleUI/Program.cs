@@ -36,28 +36,19 @@ namespace ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            /*
-             * Add
-             */
+           
             colorManager.Add(new Color { Name = "Mavi" });
-            /*
-             * Read
-             */
+         
             Color color = colorManager.GetById(5).Data;
 
             Console.WriteLine(color.Id + color.Name);
 
-            /*
-             * Update
-             */
             color.Name = "Blue";
             colorManager.Update(color);
 
             color = colorManager.GetById(5).Data;
             Console.WriteLine(color.Id + color.Name);
-            /*
-             * Delete
-             */
+            
             colorManager.Delete(color);
             Console.WriteLine(color.Name + " silindi ");
         }
@@ -66,28 +57,20 @@ namespace ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            /*
-             * Add
-             */
+            
             brandManager.Add(new Brand { Name = "Reno" });
-            /*
-             * Read
-             */
+            
             Brand brand = brandManager.GetById(10).Data;
 
             Console.WriteLine(brand.Id + brand.Name);
 
-            /*
-             * Update
-             */
+            
             brand.Name = "renault";
             brandManager.Update(brand);
 
             brand = brandManager.GetById(10).Data;
             Console.WriteLine(brand.Id + brand.Name);
-            /*
-             * Delete
-             */
+          
             brandManager.Delete(brand);
             Console.WriteLine(brand.Name + "silindi ");
         }
@@ -96,10 +79,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            /*
-            * Add
-            */
-
+        
             Car car = new Car();
             car.BrandId = 2;
             car.ColorId = 1;
@@ -111,9 +91,7 @@ namespace ConsoleUI
             carManager.Add(car);
 
             Car car1=new Car();
-            /*
-             * Read
-             */
+           
             foreach (var item in carManager.GetAll().Data)
             {
                 Console.WriteLine(item.Name + "\t Year : " + item.DailyPrice);
@@ -127,16 +105,11 @@ namespace ConsoleUI
             }
 
 
-            /*
-             * Update
-             */
+         
             car1.Name = "BMW I8";
             carManager.Update(car1);
 
           
-            /*
-             * Delete
-             */
             carManager.Delete(car1);
             Console.WriteLine(car1.Name + "silindi ");
 
