@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Abstract
+namespace Core.Business
 {
     public interface IServiceBase<T>
     {
