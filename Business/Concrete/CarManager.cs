@@ -1,12 +1,16 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
+using Core.CrossCuttingConcerns.Validation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Aspects.Autofac.Validation;
 
 namespace Business.Concrete
 {
@@ -19,12 +23,10 @@ namespace Business.Concrete
             _ICar = carDal;
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            if (car.Name.Length > 2 && car.DailyPrice > 0)
-                _ICar.Add(car);
-            else
-                throw new ArgumentException("car's name must be at least 2 characters and the daily price cannot be 0");
+            _ICar.Add(car);
 
             return new SuccessResult();
         }
@@ -44,7 +46,7 @@ namespace Business.Concrete
 
         public IDataResult<Car> GetById(int id)
         {
-            return new SuccessDataResult<Car>(_ICar.Get(p=>p.Id==id));
+            return new SuccessDataResult<Car>(_ICar.Get(p => p.Id == id));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
