@@ -7,7 +7,6 @@ namespace Core.Business
 {
     public interface IServiceBase<T>
     {
-        IDataResult<T> GetById(int id);
         IDataResult<List<T>> GetAll();
         IResult Add(T entity);
         IResult Delete(T entity);

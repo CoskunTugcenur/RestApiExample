@@ -9,7 +9,6 @@ namespace Business.Abstract
 {
     public interface IBrandService:IServiceBase<Brand>
     {
-
-
+        IDataResult<Brand> GetById(int id);
     }
 }

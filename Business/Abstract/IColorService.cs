@@ -9,7 +9,7 @@ namespace Business.Abstract
 {
     public interface IColorService:IServiceBase<Color>
     {
-      
 
+        IDataResult<Color> GetById(int id);
     }
 }

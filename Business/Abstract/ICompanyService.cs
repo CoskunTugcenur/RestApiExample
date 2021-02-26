@@ -9,6 +9,7 @@ namespace Business.Abstract
 {
     public interface ICompanyService : IServiceBase<Company>
     {
-        
+        IDataResult<Company> GetById(int id);
+
     }
 }
