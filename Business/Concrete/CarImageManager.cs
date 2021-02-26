@@ -50,5 +50,18 @@ namespace Business.Concrete
             _carImageDal.Update(entity);
             return new SuccessResult();
         }
+
+
+        public IResult CheckPictureCount(int id)
+        {
+            var result=_carImageDal.GetAll(i => i.CarId == id).Count;
+
+            if (result < 5)
+            {
+                return new SuccessResult();
+            }
+
+            return new ErrorResult();
+        }
     }
 }
