@@ -1,5 +1,4 @@
-﻿using Core.Business;
-using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -8,9 +7,14 @@ using System.Text;
 
 namespace Business.Abstract
 {
-    public interface IRentalService:IServiceBase<Rental>
+    public interface IRentalService
     {
+        IDataResult<List<Rental>> GetAll();
         IDataResult<Rental> GetById(int id);
+        IResult Add(Rental rental);
+        IResult Delete(Rental rental);
+        IResult Update(Rental rental);
+     
         IDataResult<Rental> GetRentByCarId(int carId);
 
         IDataResult<List<RentalDetailDto>> GetRentalDetails();

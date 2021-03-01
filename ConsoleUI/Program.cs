@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using Business.Concrete;
