@@ -23,14 +23,14 @@ namespace ConsoleUI
 
         private static void Test()
         {
-            UserManager userManager = new UserManager(new EfUserDal());
-            userManager.Add(new User { FirstName = "Tu", LastName = "Co", Email = "aaa@g.com", Password = "aaaaa" });
+            //UserManager userManager = new UserManager(new EfUserDal());
+            //userManager.Add(new User { FirstName = "Tu", LastName = "Co", Email = "aaa@g.com", PasswordHash=n});
 
-            CompanyManager companyManager = new CompanyManager(new EfCompanyDal());
-            companyManager.Add(new Company { Name = "TGC LTD." });
+            //CompanyManager companyManager = new CompanyManager(new EfCompanyDal());
+            //companyManager.Add(new Company { Name = "TGC LTD." });
 
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            customerManager.Add(new Customer { CompanyId = 1, UserId = 1 });
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //customerManager.Add(new Customer { CompanyId = 1, UserId = 1 });
         }
 
         private static void ColorTest()

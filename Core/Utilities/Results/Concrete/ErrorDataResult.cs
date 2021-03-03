@@ -16,6 +16,15 @@ namespace Core.Utilities.Results.Concrete
         {
 
         }
-        
+
+        public ErrorDataResult(string message) : base(false)
+        {
+
+        }
+
+        public ErrorDataResult() : base(false)
+        {
+
+        }
     }
 }
