@@ -16,13 +16,13 @@ namespace Core.Utilities.FileHelper
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
                 if (file.Length > 0)
                 {
-                    var fileName = Guid.NewGuid().ToString();
+                    var fileName = Guid.NewGuid().ToString()+".png";
                     var fullPath = Path.Combine(pathToSave, fileName);
                     using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
                         file.CopyTo(stream);
                     }
-                    return fullPath;
+                    return fileName;
                 }
                
                  return null;

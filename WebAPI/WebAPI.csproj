@@ -18,7 +18,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\CarImages\" />
+    <None Include="wwwroot\Images\070f2643-d897-4513-a50a-125d88fad8d0" />
+    <None Include="wwwroot\Images\3cfddb37-b51e-4e90-9261-4b1b35bc195c" />
+    <None Include="wwwroot\Images\496336b5-0bda-4bf0-bbbf-678a4da997b1" />
+    <None Include="wwwroot\Images\4bb81911-5a41-40cb-966a-1191f75b1f1b" />
+    <None Include="wwwroot\Images\50285a57-9a9d-4e7a-a691-87e48c31ff9c" />
+    <None Include="wwwroot\Images\50a29666-3cc2-47e9-9ad3-8a6d00884054" />
+    <None Include="wwwroot\Images\5fde56da-4f18-4a59-bfc3-69fdc2ab59ce" />
+    <None Include="wwwroot\Images\6d81a05a-a1e8-489b-83b6-fddedf450043" />
+    <None Include="wwwroot\Images\7efb3dc3-ab4a-4ebe-afe5-c6d41152eb38" />
+    <None Include="wwwroot\Images\8877e654-f5f1-44e8-8ea0-198e3d03945d" />
+    <None Include="wwwroot\Images\9a5ba8f4-6172-4c96-bd21-5042eb6ead06" />
+    <None Include="wwwroot\Images\a9997973-0871-40d0-9e30-cf0b1c533a06" />
+    <None Include="wwwroot\Images\c0efd480-b0e4-426c-b3df-f23ec4adaaf3" />
+    <None Include="wwwroot\Images\carDefault.png" />
+    <None Include="wwwroot\Images\faca025f-a7de-4761-b593-f14664f8946b" />
   </ItemGroup>
 
 
