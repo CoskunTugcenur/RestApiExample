@@ -25,10 +25,13 @@ namespace DataAccess.Concrete.EntityFramework
 
                              select new CarDetailDto
                              {
-                                 CarName = car.Name,
+                                 Id=(int)car.Id,
+                                 Name= car.Name,
                                  BrandId=(int)resultB.Id,
-                                 BrandName = resultB.Name,
                                  ColorId=(int)resultC.Id,
+                                 Description=car.Description,
+                                 ModelYear=car.ModelYear,
+                                 BrandName = resultB.Name,
                                  ColorName = resultC.Name,
                                  DailyPrice = car.DailyPrice,
                                  CarImages = (from carImage in context.CarImages
